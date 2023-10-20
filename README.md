@@ -1,4 +1,6 @@
 
+POWERLOOM PRETEST
+
 ```console
 # ADIM-1, Sunucumuzu güncelleyelim:
 sudo apt-get update
