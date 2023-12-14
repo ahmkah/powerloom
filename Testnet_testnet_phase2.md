@@ -63,13 +63,12 @@ docker ps
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 # docker ps
 
-CONTAINER ID   IMAGE                                  COMMAND                  CREATED       STATUS                 PORTS                                                                                                                                                 NAMES
-bfa1abe2b8aa   powerloom-pooler-frontend              "sh -c 'sh snapshott…"   2 hours ago   Up 2 hours (healthy)   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                                                                                             deploy-pooler-frontend-1
-852f3445f11c   powerloom-pooler                       "bash -c 'sh init_pr…"   2 hours ago   Up 2 hours (healthy)   0.0.0.0:8002->8002/tcp, :::8002->8002/tcp, 0.0.0.0:8555->8555/tcp, :::8555->8555/tcp                                                                  deploy-pooler-1
-ee652fda8513   powerloom-audit-protocol               "bash -c 'sh init_pr…"   2 hours ago   Up 2 hours (healthy)   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp, 0.0.0.0:9002->9002/tcp, :::9002->9002/tcp                                                                  deploy-audit-protocol-1
-5547fb5c1ab4   ipfs/kubo:release                      "/sbin/tini -- /usr/…"   2 hours ago   Up 2 hours (healthy)   4001/tcp, 8080-8081/tcp, 4001/udp, 0.0.0.0:5001->5001/tcp, :::5001->5001/tcp                                                                          deploy-ipfs-1
-999de5864a1b   rabbitmq:3-management                  "docker-entrypoint.s…"   2 hours ago   Up 2 hours (healthy)   4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, :::5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, :::15672->15672/tcp   deploy-rabbitmq-1
-2c14926d7cfd   redis                                  "docker-entrypoint.s…"   2 hours ago   Up 2 hours (healthy)   0.0.0.0:6379->6379/tcp, :::6379->6379/tcp      
+CONTAINER ID   IMAGE                                     COMMAND                  CREATED          STATUS                    PORTS                                                                                                                                                 NAMES
+08c24f53d600   ghcr.io/powerloom/pooler:zkevm_quests     "bash -c 'sh snapsho…"   10 minutes ago   Up 10 minutes (healthy)   0.0.0.0:8002->8002/tcp, :::8002->8002/tcp, 0.0.0.0:8555->8555/tcp, :::8555->8555/tcp                                                                  powerloom_testnet_phase2-pooler-1
+434195492ce1   ghcr.io/powerloom/audit-protocol:phase2   "bash -c 'sh snapsho…"   10 minutes ago   Up 10 minutes (healthy)   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp, 0.0.0.0:9002->9002/tcp, :::9002->9002/tcp, 0.0.0.0:9030->9030/tcp, :::9030->9030/tcp                       powerloom_testnet_phase2-audit-protocol-1
+77df5d96bdd3   rabbitmq:3-management                     "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes (healthy)   4369/tcp, 5671/tcp, 0.0.0.0:5672->5672/tcp, :::5672->5672/tcp, 15671/tcp, 15691-15692/tcp, 25672/tcp, 0.0.0.0:15672->15672/tcp, :::15672->15672/tcp   powerloom_testnet_phase2-rabbitmq-1
+4c757c2dc9d9   ipfs/kubo:release                         "/bin/sh -c ' echo '…"   10 minutes ago   Up 10 minutes (healthy)   4001/tcp, 8080-8081/tcp, 4001/udp, 0.0.0.0:5001->5001/tcp, :::5001->5001/tcp                                                                          powerloom_testnet_phase2-ipfs-1
+c951d0f2ee58   redis:alpine                              "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes (healthy)   0.0.0.0:6379->6379/tcp, :::6379->6379/tcp                                                                                                             powerloom_testnet_phase2-redis-1    
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ```
@@ -89,7 +88,6 @@ http://localhost:8002/internal/snapshotter/epochProcessingStatus?page=1&size=1
 
 http://localhost:8002/current_epoch
 
-http://localhost:3000/
 ```
 ```console
 # Silmek container durdurmak için ./bash olan screen içinde CTRL+C yapın ve aşağıdaki komudu girin
