@@ -36,7 +36,7 @@ docker-compose --version
 ```console
 # ADIM-3, powerloom_testnet_pretask klonlayalım ve .env değişkenlerini değiştirelim:
 
-// Bunun için WL almış bir cüzdan o cüzdanın privatekey bilgileri ve 1 adet ETH RPC gerekli INFURA deneyebilirsiniz.
+// Bunun için WL almış bir cüzdan o cüzdanın privatekey bilgileri ve 1 adet Polygon zkEVM Mainnet RPC gerekli Alchemy, Ankr, Quicknode deneyebilirsiniz.
 
 
 git clone https://github.com/PowerLoom/deploy.git --single-branch powerloom_testnet_phase2 --branch testnet_phase2 
